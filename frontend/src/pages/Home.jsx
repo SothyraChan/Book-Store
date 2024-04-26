@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:5555/books")
+      .get('http://localhost:5555/books')
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
@@ -27,9 +27,9 @@ const Home = () => {
     <div className="p-4">
       <div className="flex justify-between items-center">
         <h1 className="text-3xl my-8">Book List</h1>
-        <link to="/books/create">
+        <Link to='/books/create'>
           <MdOutlineAddBox className="text-sky-800 text-4xl" />
-        </link>
+        </Link>
       </div>
       {loading ? (
         <Spinner />

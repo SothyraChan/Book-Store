@@ -12,6 +12,18 @@ const app = express();
 //When testing in Thunderclient, there's an error since the body cannot recognize the server we need a middleware to use the JSON body
 app.use(express.json());
 
+//Middleware for handling CORS Policy
+//Option1: allow all origins with defualt of cors(*) -> app.use(cors())
+//Option2: allow customized origins
+// app.use(
+//     cors({
+//         origin: 'http://localhost:3000',
+//         methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//         allowedHeaders: ['Content-Type'],
+//     })
+// );
+
+
 //Create '/'route, another parameter is a callback function that requests and respones
 app.get('/', (req, res) => {
   console.log(req);
